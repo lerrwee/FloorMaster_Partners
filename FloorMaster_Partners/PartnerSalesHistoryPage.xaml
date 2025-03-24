@@ -1,0 +1,60 @@
+﻿<Page x:Class="FloorMaster_Partners.PartnerSalesHistoryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FloorMaster_Partners"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PartnerSalesHistoryPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Заголовок -->
+            <RowDefinition Height="*"/>
+            <!-- Список продаж -->
+            <RowDefinition Height="Auto"/>
+            <!-- Кнопка "Назад" -->
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <TextBlock x:Name="HeaderTextBlock" Grid.Row="0" 
+                   Text="История реализации продукции партнером: {наименование}"
+                   FontSize="16" FontWeight="Bold" Margin="10" HorizontalAlignment="Center"/>
+
+        <!-- Список продаж -->
+        <ListView x:Name="SalesHistoryListView" Grid.Row="1" ItemsSource="{Binding SalesHistory}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1" CornerRadius="5" Margin="5" Padding="5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Row="0" Text="{Binding Product.product_name}" FontWeight="Bold"  Height="20"/>
+                            <TextBlock Grid.Row="1" Text="{Binding quantity, StringFormat='Количество: {0}'}"  Height="20"/>
+                            <TextBlock Grid.Row="2" Text="{Binding sale_date, StringFormat='Дата продажи: {0:dd.MM.yyyy}'}"  Height="20"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- Кнопка "Назад" -->
+        <Button x:Name="BackButton" Grid.Row="2" Content="Назад" Margin="10" Click="BackButton_Click" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Height="30" ToolTip="Нажмите чтобы вернутся на старницу списка партнеров" Background="#F4E8D3" BorderBrush="{x:Null}"/>
+    </Grid>
+</Page>

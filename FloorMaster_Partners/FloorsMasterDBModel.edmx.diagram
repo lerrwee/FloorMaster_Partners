@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="92bed62e44aa471a93d7691b86f075e3" Name="Diagram1">
+        <EntityTypeShape EntityType="FloorsMasterDBModel.MaterialType" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FloorsMasterDBModel.Partner" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FloorsMasterDBModel.PartnerType" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FloorsMasterDBModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FloorsMasterDBModel.ProductType" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FloorsMasterDBModel.Sales" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="FloorsMasterDBModel.FK__Product__materia__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="FloorsMasterDBModel.FK__Partner__partner__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="FloorsMasterDBModel.FK__Sales__partner_i__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="FloorsMasterDBModel.FK__Product__product__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="FloorsMasterDBModel.FK__Sales__product_i__440B1D61" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
